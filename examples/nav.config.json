@@ -105,6 +105,10 @@
               "title": "Cascader 级联选择器"
             },
             {
+              "path": "/cascader-multiple-demo",
+              "title": "Cascader 多选级联选择器回显"
+            },
+            {
               "path": "/switch",
               "title": "Switch 开关"
             },

@@ -346,6 +346,7 @@ export default {
   },
 
   mounted() {
+    // console.log(this.value, 'cascader-value');
     const { input } = this.$refs;
     if (input && input.$el) {
       this.inputInitialHeight = input.$el.offsetHeight || InputSizeMap[this.realSize] || 40;
@@ -509,6 +510,7 @@ export default {
     computePresentTags() {
       const { isDisabled, leafOnly, showAllLevels, separator, collapseTags } = this;
       const checkedNodes = this.getCheckedNodes(leafOnly);
+      console.info(checkedNodes, 'checkedNodes --- cascader');
       const tags = [];
 
       const genTag = node => ({
@@ -536,7 +538,7 @@ export default {
           }
         }
       }
-
+      // console.info(tags, 'tags -- 源码中的tags');
       this.checkedNodes = checkedNodes;
       this.presentTags = tags;
     },

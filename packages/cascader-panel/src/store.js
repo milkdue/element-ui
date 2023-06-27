@@ -1,16 +1,18 @@
 import Node from './node';
 import { coerceTruthyValueToArray, valueEquals } from 'element-ui/src/utils/util';
-
 const flatNodes = (data, leafOnly) => {
-  return data.reduce((res, node) => {
+  const result = data.reduce((res, node) => {
     if (node.isLeaf) {
       res.push(node);
     } else {
       !leafOnly && res.push(node);
       res = res.concat(flatNodes(node.children, leafOnly));
     }
+    // console.info(res, 'res --- store');
     return res;
   }, []);
+  // console.log(result, 'result --- store');
+  return result;
 };
 
 export default class Store {
